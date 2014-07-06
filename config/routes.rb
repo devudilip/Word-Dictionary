@@ -1,8 +1,8 @@
 WordCorrectness::Application.routes.draw do
-  root :to =>  "homes#index"
+  root :to =>  "words#index"
 
   devise_for :users
-
+  resources :words
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

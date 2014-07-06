@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140706182511) do
+ActiveRecord::Schema.define(:version => 20140706185240) do
+
+  create_table "correct_usages", :force => true do |t|
+    t.text     "usage"
+    t.integer  "word_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "correct_usages", ["word_id"], :name => "index_correct_usages_on_word_id"
+
+  create_table "correct_words", :force => true do |t|
+    t.string   "name",             :default => ""
+    t.integer  "word_id",                          :null => false
+    t.integer  "word_language_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "correct_words", ["name"], :name => "index_correct_words_on_name"
+  add_index "correct_words", ["word_id"], :name => "index_correct_words_on_word_id"
+  add_index "correct_words", ["word_language_id"], :name => "index_correct_words_on_word_language_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",   :null => false
@@ -32,5 +53,46 @@ ActiveRecord::Schema.define(:version => 20140706182511) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "word_languages", :force => true do |t|
+    t.string   "name",          :null => false
+    t.string   "language_code", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "word_languages", ["language_code"], :name => "index_word_languages_on_language_code"
+  add_index "word_languages", ["name"], :name => "index_word_languages_on_name"
+
+  create_table "words", :force => true do |t|
+    t.string   "name",             :default => "", :null => false
+    t.integer  "user_id",                          :null => false
+    t.integer  "word_language_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "words", ["name"], :name => "index_words_on_name"
+
+  create_table "wrong_usages", :force => true do |t|
+    t.text     "usage"
+    t.integer  "word_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "wrong_usages", ["word_id"], :name => "index_wrong_usages_on_word_id"
+
+  create_table "wrong_words", :force => true do |t|
+    t.string   "name",             :default => ""
+    t.integer  "word_id",                          :null => false
+    t.integer  "word_language_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "wrong_words", ["name"], :name => "index_wrong_words_on_name"
+  add_index "wrong_words", ["word_id"], :name => "index_wrong_words_on_word_id"
+  add_index "wrong_words", ["word_language_id"], :name => "index_wrong_words_on_word_language_id"
 
 end
