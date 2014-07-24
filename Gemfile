@@ -36,7 +36,7 @@ gem "twitter-bootstrap-rails"
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano', '~> 3.2.0'
 
 # To use debugger
 # gem 'debugger'
