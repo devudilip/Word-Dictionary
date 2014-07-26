@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th> Root Word </th>
+      <%= content_tag :th, sort_link(@q, :name, 'Root Word', default_order: :asc) %>  
       <th>  Right usage </th>
       <th> Wrong Usage </th>
       <th> Right Usage Ex. </th>

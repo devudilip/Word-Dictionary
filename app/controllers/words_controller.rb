@@ -1,7 +1,8 @@
 class WordsController < ApplicationController
 
   def index
-    @words = Word.paginate(:page => params[:page])
+     @q = Word.search(params[:q])
+    @words = @q.result.page(params[:page])
   end
 
   def new
