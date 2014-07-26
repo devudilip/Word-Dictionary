@@ -3,6 +3,7 @@ class WordsController < ApplicationController
     @words = Word.all
   end
   def new
+    @word = Word.new
   end
   def edit
   end
