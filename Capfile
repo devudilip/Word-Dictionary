@@ -9,8 +9,8 @@ require 'capistrano/deploy'
 # require 'capistrano/rails'
 # Either above or below should use
 # require 'capistrano/bundler' # Rails needs Bundler, right?
-require 'capistrano/rails/assets'
-require 'capistrano/rails/migrations'
+# require 'capistrano/rails/assets'
+# require 'capistrano/rails/migrations'
 
 
 # Includes tasks from other gems included in your Gemfile

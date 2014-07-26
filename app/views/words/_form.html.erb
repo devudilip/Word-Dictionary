@@ -30,6 +30,25 @@
 <% end %>
 <%= link_to_add_fields "Add wrong word", f, :wrong_words %>
 
+<%= f.fields_for :correct_usages do |builder| %>
+<div class="control-group">
+  <%= builder.label :usage,"Correct Usage Ex", :class => 'control-label' %>
+  <div class="controls">
+    <%= builder.text_area :usage ,  :class => 'field span5', rows: "6"  %>
+  </div>
+</div>
+<% end %>
+
+
+<%= f.fields_for :wrong_usages do |builder| %>
+<div class="control-group">
+<%= builder.label :usage,"Wrong Usage Ex", :class => 'control-label' %>
+  <div class="controls">
+    <%= builder.text_area :usage ,  :class => 'field span5', rows: "6"  %>
+  </div>
+</div>
+<% end %>
+
 <div class="form-actions">
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
