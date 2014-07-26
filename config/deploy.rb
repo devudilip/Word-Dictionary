@@ -33,14 +33,11 @@ set :linked_files, %w{config/database.yml}
 # Default value for keep_releases is 5
 set :keep_releases, 10
 
-namespace :deploy do
+set :migration_role, 'migrator' 
 
-  desc 'Migrate db and precompile assets'
-  task :migrate do
-    within release_path do
-      execute :rake, 'db:migrate'
-    end
-  end
+set :assets_roles, [:web, :app] 
+
+namespace :deploy do
 
   desc 'Restart application'
   task :restart do
@@ -50,7 +47,6 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :migrate
   after :publishing, :restart
 
   after :restart, :clear_cache do
