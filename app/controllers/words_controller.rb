@@ -1,12 +1,15 @@
 class WordsController < ApplicationController
+
   def index
     @words = Word.all
   end
+
   def new
     @word = Word.new
     @word.correct_words.new 
     @word.wrong_words.new
   end
+
   def create
     @user = User.find 1
     @word = @user.words.new(params[:word])
@@ -16,9 +19,11 @@ class WordsController < ApplicationController
       render :new, error: "Word creation failed."
     end
   end
+
   def edit
     @word = Word.find params[:id]
   end
+
   def update
    @word = Word.find(params[:id])
    if @word.update_attributes(params[:word])
@@ -27,8 +32,11 @@ class WordsController < ApplicationController
     render :edit
   end
 end
+
 def show
 end
+
 def destroy
-end 
+end
+
 end
