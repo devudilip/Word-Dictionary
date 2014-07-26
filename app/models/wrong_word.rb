@@ -1,4 +1,4 @@
 class WrongWord < ActiveRecord::Base
-  # attr_accessible :title, :body
+   attr_accessible  :name, :word_language_id
    belongs_to :word
 end

@@ -8,15 +8,27 @@ class WordsController < ApplicationController
     @word.wrong_words.new
   end
   def create
-    
-    redirect_to new_word_path
+    @user = User.find 1
+    @word = @user.words.new(params[:word])
+    if @word.save
+      redirect_to new_word_path, notice: "Successfully created word."
+    else
+      render :new, error: "Word creation failed."
+    end
   end
   def edit
+    @word = Word.find params[:id]
   end
   def update
+   @word = Word.find(params[:id])
+   if @word.update_attributes(params[:word])
+    redirect_to edit_word_path(@word), notice: "Successfully updated word."
+  else
+    render :edit
   end
-  def show
-  end
-  def destroy
-  end 
+end
+def show
+end
+def destroy
+end 
 end
