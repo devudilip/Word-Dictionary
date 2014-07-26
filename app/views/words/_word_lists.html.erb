@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Root Word </th>
+      <th>  Right usage </th>
+      <th> Wrong Usage </th>
+      <th> Right Usage Ex. </th>
+      <th> Wrong Usage Ex. </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @words.each do |word| %>
+    <tr>
+      <td><%= word.name %></td>
+      <td><%= word.correct_words.first.name %></td>
+      <td><%= word.wrong_words.first.name if word.wrong_words.first %></td>
+      <td><%= word.correct_usages.first.usage if word.correct_usages.first %></td>
+      <td><%= word.wrong_usages.first.usage if word.wrong_usages.first %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="apple_pagination">
+  <%= will_paginate @words  %>
+</div>
