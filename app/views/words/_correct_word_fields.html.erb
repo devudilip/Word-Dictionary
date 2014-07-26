@@ -3,5 +3,6 @@
   <div class="controls">
     <%= f.text_field :name ,  :class => 'text_field' %>
     <%= f.select :word_language_id, WordLanguage.all.map{ |lan| [lan.language_code, lan.id] },  :class => 'number_field' %>
+    <label id="word_correct_words_attributes_0_name-error" class="error" for="word_correct_words_attributes_0_name"></label>
   </div>
 </div>
