@@ -9,6 +9,7 @@
 # role :db,  %w{deploy@example.com}
 # set :stage, :production
 set :branch, "master"
+set :rails_env, :production
  # set :domain, "69.50.196.76"
 # Extended Server Syntax
 # ======================

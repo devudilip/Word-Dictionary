@@ -30,11 +30,18 @@ set :linked_files, %w{config/database.yml}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
 namespace :deploy do
+
+  desc 'Migrate db and precompile assets'
+  task :migrate_precompile do
+    within release_path do
+      execute :rake, 'db:migrate'
+      execute :rake, 'assets:precompile'
+    end
+  end
 
   desc 'Restart application'
   task :restart do
@@ -44,6 +51,7 @@ namespace :deploy do
     end
   end
 
+  after :finishing, :migrate_precompile
   after :publishing, :restart
 
   after :restart, :clear_cache do
