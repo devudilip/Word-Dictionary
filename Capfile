@@ -3,7 +3,16 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
-require 'capistrano/rails'
+
+# require 'capistrano/rvm'
+
+# require 'capistrano/rails'
+# Either above or below should use
+# require 'capistrano/bundler' # Rails needs Bundler, right?
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+
+
 # Includes tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
@@ -14,7 +23,6 @@ require 'capistrano/rails'
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #
-# require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler'

@@ -33,9 +33,12 @@ set :linked_files, %w{config/database.yml}
 # Default value for keep_releases is 5
 set :keep_releases, 10
 
-set :migration_role, 'migrator' 
+# set :migration_role, 'migrator' 
 
-set :assets_roles, [:web, :app] 
+# set :assets_roles, [:web, :app] 
+# set :rvm_type, :system 
+# set :rvm_ruby_version, '2.0'
+
 
 namespace :deploy do
 
