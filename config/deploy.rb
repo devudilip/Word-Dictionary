@@ -36,10 +36,9 @@ set :keep_releases, 10
 namespace :deploy do
 
   desc 'Migrate db and precompile assets'
-  task :migrate_precompile do
+  task :migrate do
     within release_path do
       execute :rake, 'db:migrate'
-      execute :rake, 'assets:precompile'
     end
   end
 
@@ -51,7 +50,7 @@ namespace :deploy do
     end
   end
 
-  after :finishing, :migrate_precompile
+  after :publishing, :migrate
   after :publishing, :restart
 
   after :restart, :clear_cache do
