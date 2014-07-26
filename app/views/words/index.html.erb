@@ -23,7 +23,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="apple_pagination">
+  <%= will_paginate @posts  %>
+</div>
 <%= link_to "New",
 new_word_path,
 :class => 'btn btn-primary' %>
