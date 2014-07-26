@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Seed for Languages in WordLanguage Model
+WordLanguage.create([
+{ name: 'Kannada', language_code: 'kn' },
+{ name: 'English', language_code: 'en' }
+])
