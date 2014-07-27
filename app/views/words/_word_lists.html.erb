@@ -11,7 +11,13 @@
   <tbody>
     <% @words.each do |word| %>
     <tr>
-      <td><%= word.name %></td>
+      <td>
+      <% if current_user %>
+        <%= link_to word.name , edit_word_path(word), class: "" %>
+        <% else %>
+        <%= word.name %>
+        <% end %>
+      </td>
       <td><%= word.correct_words.first.name %></td>
       <td><%= word.wrong_words.first.name if word.wrong_words.first %></td>
       <td><%= word.correct_usages.first.usage if word.correct_usages.first %></td>
