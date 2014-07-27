@@ -20,54 +20,58 @@
       <header class="navbar">
         <div class="navbar-inner">
           <div class="container">
-             <a id="logo" class="pull-left " href="/">  </a> 
-            <div class="nav-collapse collapse pull-right">
-              <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li class="login">
-                  <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
-                </li>
-              </ul>        
-            </div><!--/.nav-collapse -->
-          </div>
+           <a id="logo" class="pull-left " href="/">  </a> 
+           <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="login">
+                <% if current_user %>
+                <%= link_to "logout" , destroy_user_session_path , method: :delete %>
+                <% else %>
+                <a href="/login"><i class="icon-lock"></i></a>
+                <% end %>
+              </li>
+            </ul>        
+          </div><!--/.nav-collapse -->
         </div>
-      </header>
-      <!-- /header -->
+      </div>
+    </header>
+    <!-- /header -->
 
+    <div class="container">
+      <div class="row">
+        <%= bootstrap_flash %>
+        <%= yield %>
+      </div><!--/row-->
+
+
+
+    </div> <!-- /container -->
+
+    <!--Footer-->
+    <footer id="footer">
       <div class="container">
-        <div class="row">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div><!--/row-->
-
-
-
-      </div> <!-- /container -->
-
-      <!--Footer-->
-      <footer id="footer">
-        <div class="container">
-          <div class="row-fluid">
-            <div class="span5 cp">
-              &copy; 2013  All Rights Reserved.
-            </div>
-            <!--/Copyright-->
-
-            <div class="span6">
-
-            </div>
-
-            <div class="span1">
-              <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
-            </div>
-            <!--/Goto Top-->
+        <div class="row-fluid">
+          <div class="span5 cp">
+            &copy; 2013  All Rights Reserved.
           </div>
+          <!--/Copyright-->
+
+          <div class="span6">
+
+          </div>
+
+          <div class="span1">
+            <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+          </div>
+          <!--/Goto Top-->
         </div>
-      </footer>
-      <!--/Footer-->
+      </div>
+    </footer>
+    <!--/Footer-->
 
 
-    </body>
-    </html>
+  </body>
+  </html>

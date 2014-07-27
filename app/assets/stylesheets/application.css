@@ -141,11 +141,18 @@
 
  /*Page header search */
 
- .page-header {
+ .main-page-header {
  	text-align: center;
  }
 
- .page-header input[type="search"] {
+ .main-page-header input[type="search"] {
  	height: 35px;
  	width: 500px;	
  }
+
+
+/*devise */
+
+.sign-in-devise{
+	text-align: center;
+}
