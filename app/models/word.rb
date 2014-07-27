@@ -11,5 +11,5 @@ class Word < ActiveRecord::Base
   accepts_nested_attributes_for :wrong_usages, :reject_if => lambda { |a| a[:usage].blank? }
 
   validates :name, presence: true
-
+  self.per_page = 15
 end
