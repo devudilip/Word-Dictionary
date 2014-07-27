@@ -15,3 +15,7 @@
   .table td{
   	text-align: center;
   }
+  
+  .container {
+  	margin: 5px auto;
+  }
