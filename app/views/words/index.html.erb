@@ -9,11 +9,12 @@
 
 
 </div>
-<div class="word-lists"> 
-  <%= render 'word_lists' %>
-</div>
 <% if current_user %>
 <%= link_to "New Word",
 new_word_path,
 :class => 'btn btn-primary' %> 
 <% end %>
+<div class="word-lists"> 
+  <%= render 'word_lists' %>
+</div>
+

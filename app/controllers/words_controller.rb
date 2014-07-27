@@ -19,7 +19,7 @@ def create
   @user = current_user
   @word = @user.words.new(params[:word])
   if @word.save
-    redirect_to new_word_path, notice: "Successfully created word."
+    redirect_to words_path, notice: "Successfully created word."
   else
     render :new, error: "Word creation failed."
   end
@@ -32,7 +32,7 @@ end
 def update
  @word = Word.find(params[:id])
  if @word.update_attributes(params[:word])
-  redirect_to edit_word_path(@word), notice: "Successfully updated word."
+  redirect_to words_path, notice: "Successfully updated word."
 else
   render :edit
 end
