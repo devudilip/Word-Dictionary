@@ -99,7 +99,7 @@
  	box-shadow: none;
  }
  header #logo {
- 	background: url("../images/logo.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
+ 	/*background: url("../images/logo.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);*/
  	height: 80px;
  	width: 220px;
  }
