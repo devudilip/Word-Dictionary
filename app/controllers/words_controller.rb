@@ -28,6 +28,7 @@ end
 
 def edit
   @word = Word.find params[:id]
+  @word_languages = WordLanguage.all
 end
 
 def update

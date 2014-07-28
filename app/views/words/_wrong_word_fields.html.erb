@@ -4,7 +4,7 @@
     <%= f.text_field :name ,  :class => 'text_field' %>
     <% @word_languages.each do |lang| %>
     <%= lang.language_code %>
-    <%= f.radio_button :word_language_id, lang, :checked => lang.language_code == 'kn' ? true : false %> 
+    <%= f.radio_button :word_language_id, lang.id %>
     <% end %>
   </div>
 </div>

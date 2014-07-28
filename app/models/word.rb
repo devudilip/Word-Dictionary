@@ -1,6 +1,7 @@
 class Word < ActiveRecord::Base
   attr_accessible :name, :word_language_id, :correct_words_attributes, :wrong_words_attributes,:correct_usages_attributes, :wrong_usages_attributes
   belongs_to :user
+  belongs_to :word_language
   has_many :correct_words, dependent: :destroy
   has_many :wrong_words, dependent: :destroy
   has_many :correct_usages, dependent: :destroy
