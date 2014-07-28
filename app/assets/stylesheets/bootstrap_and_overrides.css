@@ -9,11 +9,9 @@
 
   .table thead th{
   	min-width: 115px;
-  	text-align: center;
   }
 
   .table td{
-  	text-align: center;
   }
   
   .container {
