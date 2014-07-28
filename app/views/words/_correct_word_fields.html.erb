@@ -4,7 +4,11 @@
     <%= f.text_field :name ,  :class => 'text_field' %>
     <% @word_languages.each do |lang| %>
     <%= lang.language_code %>
+    <% if @word.persisted? %>
     <%= f.radio_button :word_language_id, lang.id %>
+    <% else %>
+    <%= f.radio_button :word_language_id, lang.id, checked: get_checked(lang) %>
+    <% end %>
     <% end %>
     <label id="word_correct_words_attributes_0_name-error" class="error" for="word_correct_words_attributes_0_name"></label>
   </div>
