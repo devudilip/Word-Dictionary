@@ -2,7 +2,10 @@
   <%= f.label :name,"Correct Word", :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :name ,  :class => 'text_field' %>
-    <%= f.select :word_language_id, WordLanguage.all.map{ |lan| [lan.language_code, lan.id] },  :class => 'number_field' %>
+    <% @word_languages.each do |lang| %>
+    <%= lang.language_code %>
+    <%= f.radio_button :word_language_id, lang, :checked => lang.language_code == 'kn' ? true : false %> 
+    <% end %>
     <label id="word_correct_words_attributes_0_name-error" class="error" for="word_correct_words_attributes_0_name"></label>
   </div>
 </div>

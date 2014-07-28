@@ -15,7 +15,10 @@
   <%= f.label :name, :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :name, :class => 'text_field' %>
-    <%= f.select :word_language_id, WordLanguage.all.map{ |lan| [lan.language_code, lan.id] },  :class => 'number_field' %>
+    <% @word_languages.each do |lang| %>
+    <%= lang.language_code %>
+    <%= f.radio_button :word_language_id, lang, :checked => lang.language_code == 'kn' ? true : false %> 
+    <% end %>
     <label id="word_name-error" class="error" for="word_name"></label>
   </div>
   
@@ -30,6 +33,7 @@
 <% end %>
 <%= link_to_add_fields "Add wrong word", f, :wrong_words %>
 
+
 <%= f.fields_for :correct_usages do |builder| %>
 <div class="control-group">
   <%= builder.label :usage,"Correct Usage Ex", :class => 'control-label' %>
@@ -42,7 +46,7 @@
 
 <%= f.fields_for :wrong_usages do |builder| %>
 <div class="control-group">
-<%= builder.label :usage,"Wrong Usage Ex", :class => 'control-label' %>
+  <%= builder.label :usage,"Wrong Usage Ex", :class => 'control-label' %>
   <div class="controls">
     <%= builder.text_area :usage ,  :class => 'field span5', rows: "6"  %>
   </div>

@@ -13,6 +13,7 @@ class WordsController < ApplicationController
   @word.wrong_words.new
   @word.correct_usages.new
   @word.wrong_usages.new
+  @word_languages = WordLanguage.all
 end
 
 def create
