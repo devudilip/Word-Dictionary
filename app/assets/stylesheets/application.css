@@ -156,3 +156,8 @@
 .sign-in-devise{
 	text-align: center;
 }
+
+.word-text-area {
+	height: 100px;
+ 	width: 285px;
+}
