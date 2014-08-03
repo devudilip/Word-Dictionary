@@ -1,0 +1,25 @@
+kn:
+  # Layouts header
+  pada_sanchaya: "ಪದ ಸಂಚಯ"
+  about_us: "ನಮ್ಮ ಬಗ್ಗೆ"
+  contact: "ಸಂಪರ್ಕಿಸಿ"
+  log_out: "ಹೊರ ನೆಡೆ"
+  # words index
+  word: "ಪದ"
+  search: "ಹುಡುಕು"
+  new_word: "ಹೊಸ ಪದ"
+  # word index table
+  root_word: "ಮೂಲ ಪದ"
+  right_usage: "ಸರಿಯಾದ ಬಳಕೆ"
+  wrong_usage: "ತಪ್ಪಾದ ಬಳಕೆ"
+  right_usage_ex: "ಸರಿಯಾದ ಬಳಕೆಗೆ ಉದಾ"
+  wrong_usage_ex: "ತಪ್ಪಾದ ಬಳಕೆಗೆ ಉದಾ"
+  #  New Word Page
+
+  # active record form translation
+  activerecord:
+    attributes:
+      word:
+        name: "name"
+      correct_word:
+        name: "name"
