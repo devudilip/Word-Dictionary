@@ -8,6 +8,7 @@
 
 # Seed for Languages in WordLanguage Model
 WordLanguage.create([
-{ name: 'Kannada', language_code: 'kn' },
-{ name: 'English', language_code: 'en' }
-])
+  { name: 'Kannada', language_code: 'kn' },
+  { name: 'Hindi', language_code: 'hi' },
+  { name: 'English', language_code: 'en' }
+  ])
