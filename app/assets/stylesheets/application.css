@@ -98,11 +98,11 @@
  	border: 0 none;
  	box-shadow: none;
  }
- header #logo {
- 	/*background: url("../images/logo.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);*/
- 	height: 80px;
- 	width: 220px;
+ header .logo {
+ 	margin-top: 1%;
+ 	width: 20%
  }
+
 
  header.navbar {
  	margin-bottom: 0;
@@ -151,13 +151,13 @@
  }
 
 
-/*devise */
+ /*devise */
 
-.sign-in-devise{
-	text-align: center;
-}
+ .sign-in-devise{
+ 	text-align: center;
+ }
 
-.word-text-area {
-	height: 100px;
+ .word-text-area {
+ 	height: 100px;
  	width: 285px;
-}
+ }
