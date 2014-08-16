@@ -16,3 +16,4 @@
 config/database.yml
 config/deploy.rb
 config/deploy/
+.rvmrc

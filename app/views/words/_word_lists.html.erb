@@ -1,11 +1,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <%= content_tag :th, sort_link(@q, :name, 'Root Word', default_order: :asc) %>  
-      <th>  Right usage </th>
-      <th> Wrong Usage </th>
-      <th> Right Usage Ex. </th>
-      <th> Wrong Usage Ex. </th>
+      <%= content_tag :th, sort_link(@q, :name, t(:root_word), default_order: :asc) %>  
+      <th>  <%= t :right_usage %> </th>
+      <th> <%= t :wrong_usage %> </th>
+      <th> <%= t :right_usage_ex %>: </th>
+      <th> <%= t :wrong_usage_ex %>: </th>
     </tr>
   </thead>
   <tbody>
