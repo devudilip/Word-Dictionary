@@ -7,12 +7,12 @@
   </div>
 </div>
 
+<% if params[:q] and params[:q][:name_or_correct_words_name_or_wrong_words_name_cont] %>
 <% if current_user %>
 <%= link_to t(:new_word),
 new_word_path,
 :class => 'btn btn-primary' %> 
 <% end %>
-<% if params[:q] and params[:q][:name_or_correct_words_name_or_wrong_words_name_cont] %>
 <div class="word-lists"> 
   <%= render 'word_lists' %>
 </div>
