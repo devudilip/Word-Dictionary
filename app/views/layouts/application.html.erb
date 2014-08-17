@@ -17,23 +17,25 @@
       <header class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <% unless params[:controller] == "words" and params[:action] == "index" %>
-            <%= link_to(image_tag('logo.png', class: "logo"), root_path) %>
-            <% end %>
-            <div class="nav-collapse collapse pull-right">
-              <ul class="nav">
-                <li><a href="/"><%= t :pada_sanchaya %> </a></li>
-                <li><a href="/about_us"> <%= t :about_us %> </a></li>
-                <li><a href="#"><%= t :contact %></a></li>
-                <li class="login">
-                  <% if current_user %>
-                  <%= link_to t(:log_out) , destroy_user_session_path , method: :delete %>
-                  <% else %>
-                  <a href="/login"><i class="icon-lock"></i></a>
-                  <% end %>
-                </li>
-              </ul>        
-            </div><!--/.nav-collapse -->
+            <div> 
+              <% unless params[:controller] == "words" and params[:action] == "index" %>
+              <%= link_to(image_tag('logo.png', class: "logo"), root_path) %>
+              <% end %>
+              <div  style="float:right">
+                <ul class="nav">
+                  <li><a href="/"><%= t :pada_sanchaya %> </a></li>
+                  <li><a href="/about_us"> <%= t :about_us %> </a></li>
+                  <li><a href="#"><%= t :contact %></a></li>
+                  <li class="login">
+                    <% if current_user %>
+                    <%= link_to t(:log_out) , destroy_user_session_path , method: :delete %>
+                    <% else %>
+                    <a href="/login"><i class="icon-lock"></i></a>
+                    <% end %>
+                  </li>
+                </ul>        
+              </div><!--/.nav-collapse -->
+            </div>
           </div>
         </div>
       </header>
