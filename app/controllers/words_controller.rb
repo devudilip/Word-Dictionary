@@ -21,7 +21,7 @@ def create
   @user = current_user
   @word = @user.words.new(params[:word])
   if @word.save
-    redirect_to words_path, notice: "Successfully created word."
+    redirect_to new_word_path, notice: "Successfully created word."
   else
     render :new, error: "Word creation failed."
   end
