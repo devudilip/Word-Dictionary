@@ -28,10 +28,6 @@
   
 </div>
 
-<%= f.fields_for :correct_words do |builder| %>
-<%= render 'correct_word_fields', f: builder %>
-<% end %>
-
 <%= f.fields_for :word_translations do |builder| %>
 <%= render 'word_translations', f: builder %>
 <% end %>
