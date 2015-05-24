@@ -14,6 +14,8 @@ kn:
   wrong_usage: "ತಪ್ಪಾದ ಬಳಕೆ"
   right_usage_ex: "ಸರಿಯಾದ ಬಳಕೆಗೆ ಉದಾ"
   wrong_usage_ex: "ತಪ್ಪಾದ ಬಳಕೆಗೆ ಉದಾ"
+  notes: 'ಟಿಪ್ಪಣಿ'
+  english_word: 'ಇಂಗ್ಲಿಷ್ ಪದ'
   #  New Word Page
 
   # active record form translation
