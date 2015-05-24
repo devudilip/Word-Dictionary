@@ -10,6 +10,7 @@ class WordsController < ApplicationController
  def new
   @word = Word.new
   @word.correct_words.new 
+  @word.word_translations.new
   @word.wrong_words.new
   @word.correct_usages.new
   @word.wrong_usages.new

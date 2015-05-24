@@ -1,0 +1,14 @@
+<div class="control-group">
+<%= f.label :name,"Word in other language", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :name ,  :class => 'text_field' %>
+    <% @word_languages.each do |lang| %>
+    <%= lang.language_code %>
+    <% if @word.persisted? %>
+    <%= f.radio_button :word_language_id, lang.id %>
+    <% else %>
+    <%= f.radio_button :word_language_id, lang.id, checked: get_checked(lang,'en') %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
