@@ -4,8 +4,6 @@
       <%= content_tag :th, sort_link(@q, :name, t(:root_word), default_order: :asc) %>  
       <th> <%= t :wrong_usage %> </th>
       <th> <%= t :notes %> </th>
-      <th> <%= t :right_usage_ex %>: </th>
-      <th> <%= t :wrong_usage_ex %>: </th>
     </tr>
   </thead>
   <tbody>
@@ -20,8 +18,6 @@
       </td>
       <td><%= word.notes.first.notes if word.notes.first %></td>
       <td><%= word.wrong_words.first.name if word.wrong_words.first %></td>
-      <td><%= word.correct_usages.first.usage if word.correct_usages.first %></td>
-      <td><%= word.wrong_usages.first.usage if word.wrong_usages.first %></td>
     </tr>
     <% end %>
   </tbody>
