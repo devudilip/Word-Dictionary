@@ -17,7 +17,11 @@
         <%= word.name %>
         <% end %>
       </td>
-      <td><%= word.wrong_words.first.name if word.wrong_words.first %></td>
+      <td>
+        <% word.wrong_words.each do |wrong_word| %>
+        <%= wrong_word.name %> <br />
+        <% end %>
+      </td>
       <td><%= word.word_translations.first.name if word.word_translations.first %></td>
       <td><%= word.notes.first.notes if word.notes.first %></td>
     </tr>
