@@ -4,7 +4,7 @@ class WordsController < ApplicationController
 
   def index
    @q = Word.search(params[:q])
-   @words = @q.result.page(params[:page])
+   @words = @q.result(distinct: true).page(params[:page])
  end
 
  def new
